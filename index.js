@@ -5,6 +5,8 @@ const employee = {
     streetAddress: "450 Pickle St.",
 };
 
+// console.log(`'employee: ${[employee]}`);
+
 function updateEmployeeWithKeyAndValue(emp, key, value) {
     return {
         ...emp,
@@ -12,36 +14,33 @@ function updateEmployeeWithKeyAndValue(emp, key, value) {
     };
 }
 
-// console.log(employee);
-// console.log(updateEmployeeWithKeyAndValue(employee, "name", "Max"));
+// console.log(updateEmployeeWithKeyAndValue(employee, 'name', "Max"));
 
 function destructivelyUpdateEmployeeWithKeyAndValue(emp, key, value) {
-
     emp[key] = value;
-
     return emp;
 }
 
 // console.log(employee);
-// destructivelyUpdateEmployeeWithKeyAndValue(employee, "name", "Harry");
+// destructivelyUpdateEmployeeWithKeyAndValue(employee, 'name', 'Duke');
 // console.log(employee);
 
-
-function deleteFromEmployeeByKey(obj, key) {
-    const newObj = {...obj};
+function deleteFromEmployeeByKey(employeeObj, key) {
+    const newObj = {...employeeObj};
     delete newObj[key];
     return newObj;
 }
 
+
 // console.log(employee);
-// const myObj = deleteFromEmployeeByKey(employee, "name");
-// console.log(myObj);
+// console.log(deleteFromEmployeeByKey(employee, 'name'));
+
 
 function destructivelyDeleteFromEmployeeByKey(employee, key) {
     delete employee[key];
     return employee;
 }
 
-console.log(employee);
-destructivelyDeleteFromEmployeeByKey(employee, "name");
-console.log(employee);
+// console.log(employee);
+// destructivelyDeleteFromEmployeeByKey(employee, "name");
+// console.log(employee);
